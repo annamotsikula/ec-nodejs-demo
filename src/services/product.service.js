@@ -1,7 +1,7 @@
 const { Op } = require("sequelize");
-const { User, Card } = require("../db/models")
+const { User, Product } = require("../db/models")
 
-const getCards = async ({ alias, id, userId }) => {
+const getProducts = async ({ alias, id, userId }) => {
   const filter = {
     ...(alias && {
       alias: {
@@ -17,7 +17,7 @@ const getCards = async ({ alias, id, userId }) => {
   };
 
 
-  const data = await Card.findAll({
+  const data = await Product.findAll({
     where: {
       ...filter
     },
@@ -31,10 +31,10 @@ const getCards = async ({ alias, id, userId }) => {
   return data;
 };
 
-const getCardById = async (id) => Card.findByPk(id);
+const getProductById = async (id) => Product.findByPk(id);
 
-const deleteCard = async (id) => {
-  const card = await Card.findByPk(id);
+const deleteProduct = async (id) => {
+  const card = await Product.findByPk(id);
 
   if (!card) {
     return {
@@ -42,7 +42,7 @@ const deleteCard = async (id) => {
     }
   };
 
-  await Card.destroy(id);
+  await Product.destroy(id);
 };
 
 // NOTE: create -> Card.create({ ...})
@@ -58,6 +58,6 @@ const deleteCard = async (id) => {
 
 
 module.exports = {
-  getCards,
-  getCardById, deleteCard
+  getProducts,
+  getProductById, deleteProduct
 }

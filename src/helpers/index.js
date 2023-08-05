@@ -1,4 +1,6 @@
 const safeController = require('./safecontroller');
+const addHours = require('./functions/addHrs')
+
 
 const {
     ApiError,
@@ -14,6 +16,7 @@ const {
 
 module.exports = {
   safeController,
+  addHours,
   ApiError,
   BadRequestException,
   UnauthorizedException,

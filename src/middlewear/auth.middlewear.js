@@ -2,7 +2,7 @@ const jwt = require("jsonwebtoken");
 const { UnauthorizedException } = require('../helpers');
 
 
-const authMiddleWear = (req, res, next) => {
+const authMiddleWear = (req, _, next) => {
   try {
     if (req.headers.hasOwnProperty("authorization")) {
       const token = req?.headers?.authorization.split(" ")[1];

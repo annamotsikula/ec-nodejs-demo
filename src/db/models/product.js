@@ -22,7 +22,7 @@ class Product extends Model {
         },
         deletedAt: {
           type: DataTypes.DATE,
-          allowNull: false,
+          allowNull: true,
         }
       },
       {

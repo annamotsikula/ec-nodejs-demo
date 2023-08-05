@@ -9,7 +9,8 @@ const signUpValidator = async (req, res, next) => {
     password: Joi.string().pattern(regex).required(),
     firstName: Joi.string().min(2).required(),
     lastName: Joi.string().min(2).required(),
-    isAdmin: Joi.boolean(),
+    balance: Joi.number().min(0),
+    isAdmin: Joi.boolean()
   });
 
   return joiValidator({ schema, objectToValidate: req.body, next });
