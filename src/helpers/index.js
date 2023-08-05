@@ -1,5 +1,4 @@
 const safeController = require('./safecontroller');
-const joiValidator = require('./joiValidator');
 
 const {
     ApiError,
@@ -22,5 +21,4 @@ module.exports = {
   NotFoundException,
   ConflictException,
   InternalServerErrorException,
-  joiValidator
 }

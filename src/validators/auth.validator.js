@@ -1,5 +1,5 @@
 const Joi = require("joi");
-const joiValidator = require("./joiValidator");
+const joiValidator = require("./joi.validator");
 
 const signUpValidator = async (req, res, next) => {
   const regex = new RegExp("^[a-zA-Z0-9]{8,30}$");
